@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'redcarpet'
 
 group :development do
   gem 'web-console', '~> 2.0'

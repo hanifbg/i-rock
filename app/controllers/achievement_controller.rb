@@ -12,6 +12,11 @@ class AchievementController < ApplicationController
     end
   end
 
+  def show
+    @achievement = Achievement.find(params[:id])
+    @description = Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(@achievement.description)
+  end
+
   private
 
   def achievement_params
