@@ -4,11 +4,28 @@
   <title>IRock</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="/">i Rock</a>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav">
+		      <li><%= link_to 'New Achievement', new_achievement_path %></li>
+		    </ul>
+		  </div>
+		</nav>
+
+		<% if flash[:notice] %>
+			<div class="alert alert-info"><%= flash[:notice] %></div>
+		<% end %>
+
+		<%= yield %>
+	</div>
+
 
 </body>
 </html>
