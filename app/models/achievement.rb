@@ -1,4 +1,9 @@
 class Achievement < ActiveRecord::Base
   validates :title, presence: true
-  enum privacies: [:public_access, :private_access, :friend_access]
+
+  enum privacy: [:public_access, :private_access, :friend_access]
+
+  def description_html
+    Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(description)
+  end
 end
