@@ -17,6 +17,8 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'redcarpet'
 
+gem 'devise', '~> 3.4.1'
+
 group :development do
   gem 'web-console', '~> 2.0'
 end
