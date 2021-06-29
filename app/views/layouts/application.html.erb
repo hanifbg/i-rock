@@ -15,12 +15,17 @@
 		  <div class="collapse navbar-collapse" id="navbarNav">
 		    <ul class="navbar-nav">
 		      <li><%= link_to 'New Achievement', new_achievement_path %></li>
+		      <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
 		    </ul>
 		  </div>
 		</nav>
 
 		<% if flash[:notice] %>
 			<div class="alert alert-info"><%= flash[:notice] %></div>
+		<% end %>
+
+		<% if flash[:alert] %>
+			<div class="alert alert-danger"><%= flash[:alert] %></div>
 		<% end %>
 
 		<%= yield %>

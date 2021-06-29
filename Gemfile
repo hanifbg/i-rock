@@ -18,6 +18,9 @@ gem 'simple_form'
 gem 'redcarpet'
 
 gem 'devise', '~> 3.4.1'
+gem 'carrierwave'
+gem 'twitter', '~> 6.2'
+gem 'active_model_serializers', '0.10.0.rc2'
 
 group :development do
   gem 'web-console', '~> 2.0'
@@ -37,5 +40,7 @@ group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'shoulda-matchers', '~> 2.8.0', require: false
+  gem 'vcr'
+  gem 'webmock'
 end
 

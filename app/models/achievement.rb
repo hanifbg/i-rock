@@ -1,5 +1,8 @@
 class Achievement < ActiveRecord::Base
   belongs_to :user
+  has_many :encouragements
+
+  mount_uploader :cover_image, CoverImageUploader
 
   validates :title, presence: true
   validates :user, presence: true

@@ -12,8 +12,11 @@ class AchievementController < ApplicationController
 
   def create
     @achievement = Achievement.new(achievement_params)
+    @achievement.user = current_user
     if @achievement.save
-      redirect_to achievement_url(@achievement), notice: 'Achievement has been created'
+      UserMailer.achievement_created(current_user.email, @achievement.id).deliver_now
+      tweet = {:url => "oke"}#TwitterService.new.tweet(@achievement.title)
+      redirect_to achievement_url(@achievement), notice: "Achievement has been created. We tweeted for you!"
     else
       render :new
     end
